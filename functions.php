@@ -48,8 +48,4 @@ add_filter('dynamic_sidebar_params','widget_first_last_classes');
 
 show_admin_bar(false); 
 
-
-
-
-
 ?>
