@@ -50,5 +50,15 @@ show_admin_bar(false);
 
 
 
+add_action('plugins_loaded',array($this,'wplms_define_constants'),5);  
+
+
+function wplms_define_constants(){
+
+            if ( ! defined( 'WPLMS_COURSE_CATEGORY_SLUG' ) )
+                define( 'WPLMS_COURSE_CATEGORY_SLUG', 'awaken' );
+
+        }  
+
 
 ?>
