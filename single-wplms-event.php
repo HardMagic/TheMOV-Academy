@@ -93,7 +93,10 @@ do_action('wplms_before_single_event');
         
         <div class="row">
             <div class="col-md-9 col-sm-8">
-                  
+                    <?php
+
+                    echo apply_filters('wplms_event_access_thumbnail',thumbnail_generator($post,'event_card'));
+                    ?>
                     <div class="content">
                         <?php do_action('wplms_event_before_content'); ?>
                         <div class="extra_buttons">
@@ -148,11 +151,6 @@ google.maps.event.addDomListener(window, "load", initialize);
                 ?>
             </div>
             <div class="col-md-3 col-sm-4">
-                
-                <?php
-                    echo apply_filters('wplms_event_access_thumbnail',thumbnail_generator($post,'event_card'));
-                ?>
-                    
                 <?php
                 if(apply_filters('wplms_event_access_flag',$access_flag)){
                     if(isset($additional_info) && is_array($additional_info)){
