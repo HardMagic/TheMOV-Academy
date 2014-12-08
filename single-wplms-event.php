@@ -90,7 +90,7 @@ do_action('wplms_before_single_event');
 </section>
 <section id="content">
     <?php
-    $layerslider_event=get_post_meta(get_the_ID(),'vibe_product',true);
+    $layerslider_event=get_post_meta(get_the_ID(),'layerslider_event',true);
     if(isset($layerslider_event))
     layerslider($layerslider_event); ?>
     
