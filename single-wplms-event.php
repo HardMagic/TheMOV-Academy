@@ -108,8 +108,7 @@ do_action('wplms_before_single_event');
                         <?php
                         if(apply_filters('wplms_event_access_flag',$access_flag)){
                             the_content(); 
-                        ?>
-                        <?php
+                        else {  ?> <div>Show Info</div> <?php }
                         if(vibe_validate($show_location)){
                            $map_zoom=vibe_get_option('map_zoom');
                       echo '<h3 class="heading">'.__('Event Location','vibe').'</h3>';
@@ -176,7 +175,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                     }
                 }   
                 $sidebar=getPostMeta($post->ID,'event_widget_mov');
-                ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='coursesidebar');
+                ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='event_widget_mov');
                 if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
                <?php endif; ?>
             </div>
