@@ -176,7 +176,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                     }
                 }   
                 $sidebar=getPostMeta($post->ID,'vibe_sidebar');
-                ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='eventsidebar');
+                ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='coursesidebar');
                 if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
                <?php endif; ?>
             </div>
