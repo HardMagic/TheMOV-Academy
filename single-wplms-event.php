@@ -73,7 +73,7 @@ do_action('wplms_before_single_event');
                 }else if(isset($check_student) && $check_student){
                     $check_invite = apply_filters('wplms_events_invite_buttons',get_post_meta(get_the_ID(),$current_user->ID,true));
                     if(isset($check_invite) && $check_invite){
-                         vibe_breadcrumbs();
+                         do_action('wplms_event_after_content',get_the_ID());
                     }else{
                         $nonce = wp_create_nonce('vibe_'.$post->ID.$current_user->ID);
 
@@ -160,7 +160,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                 ?>
                     
                 <?php
-                
+                // if(apply_filters('wplms_event_access_flag',$access_flag)){
                     if(isset($additional_info) && is_array($additional_info)){
                         ?>
                         <div class="widget additional_info">
@@ -168,7 +168,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                             <ul>
                             <?php
                             foreach($additional_info as $info){
-                                echo '<li>'.html_entity_decode($info).'</li>';
+                            //    echo '<li>'.html_entity_decode($info).'</li>';
                             }
                             ?>
                             </ul>
@@ -180,6 +180,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                         echo do_shortcode($more_info);
                         echo '</div>';
                     }
+                // }
                 
                 $sidebar=getPostMeta($post->ID,'event_widget_mov');
                 ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='event_widget_mov');
