@@ -139,6 +139,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                      else {  
                          
                         $product=get_post_meta(get_the_ID(),'vibe_product',true);
+                        print_r($product);
                         setup_postdata( $product ); //  "posts" page is now current post for most template tags        
                         the_content();
                         wp_reset_postdata(); // So everything below functions as normal
