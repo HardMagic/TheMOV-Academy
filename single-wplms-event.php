@@ -34,7 +34,6 @@ do_action('wplms_before_single_event');
         <div class="row">
             <div class="col-md-9 col-sm-8">
                 <div class="pagetitle">
-                    <span><?php echo '<a href="'.get_permalink($course).'">Airikai '.get_the_title($course).'</a>'; ?></span>
                     <h1><i class="<?php echo $icon_class; ?>" style="color:<?php echo $color; ?>"></i>
                         <?php the_title(); ?>
                     </h1>
@@ -50,11 +49,11 @@ do_action('wplms_before_single_event');
 
                 if (($post->post_author == $current_user->ID) || current_user_can('manage_options')){   
                    if(isset($send_invitation) && $send_invitation){
-                        echo '<a href="#" id="send_event_invitation" class="button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('RE-INVITE STUDENTS','vibe').'<span>'.$send_invitation.'</span></a>';
+                        echo '<a href="#" id="send_event_invitation" class="moveventbutton button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('RE-INVITE STUDENTS','vibe').'<span>'.$send_invitation.'</span></a>';
                     }else{
-                        echo '<a href="#" id="send_event_invitation" class="button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('SEND INVITATION','vibe').'</a>';
+                        echo '<a href="#" id="send_event_invitation" class="moveventbutton button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('SEND INVITATION','vibe').'</a>';
                     }
-                    echo '<a href="#" id="send_event_reminder" class="button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('SEND EMAIL REMINDER','vibe').'</a>';
+                    echo '<a href="#" id="send_event_reminder" class="moveventbutton button full" data-course="'.$course.'" data-event-id="'.get_The_ID().'">'.__('SEND EMAIL REMINDER','vibe').'</a>';
                     // INVITATION FORM
                     echo '<form method="post" id="invitation_form"><div class="invitation_box">
                         <input type="text" class="form_field" name="invitation_subject" placeholder="'.__('SUBJECT','vibe').'" />
