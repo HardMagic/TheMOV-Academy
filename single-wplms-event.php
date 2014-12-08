@@ -81,7 +81,7 @@ do_action('wplms_before_single_event');
                         echo '<a href="'.get_permalink().'?security='.$nonce.'&reject" id="reject" class="button primary full">'.__('REJECT INVITE','vibe').'</a>';
                     }
                 }else{
-                    vibe_breadcrumbs();
+                    do_action('wplms_event_after_content',get_the_ID());
                 }    
                 ?>
             </div>
