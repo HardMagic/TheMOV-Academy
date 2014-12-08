@@ -158,7 +158,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                     if(isset($additional_info) && is_array($additional_info)){
                         ?>
                         <div class="widget additional_info">
-                            <h3 class="heading"><?php echo $additional_info[0]; ?> </h3>
+                            <h3 class="heading"><?php _e('Additional Information','vibe'); ?></h3>
                             <ul>
                             <?php
                             foreach($additional_info as $info){
