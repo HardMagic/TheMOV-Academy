@@ -136,7 +136,11 @@ google.maps.event.addDomListener(window, "load", initialize);
                         echo '<div id="map-canvas"></div></div>';
                         }
                     }
-                     else {  ?> <div>Show Info</div> <?php }
+                     else {  
+                         
+                        $product=get_post_meta(get_the_ID(),'vibe_product',true);
+                        the_content($product);
+                        }
                         ?>
                          <?php do_action('wplms_event_after_content',get_the_ID()); ?>
                     </div>
