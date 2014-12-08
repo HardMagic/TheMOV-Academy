@@ -160,7 +160,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                 ?>
                     
                 <?php
-                if(apply_filters('wplms_event_access_flag',$access_flag)){
+                
                     if(isset($additional_info) && is_array($additional_info)){
                         ?>
                         <div class="widget additional_info">
@@ -180,7 +180,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                         echo do_shortcode($more_info);
                         echo '</div>';
                     }
-                }   
+                
                 $sidebar=getPostMeta($post->ID,'event_widget_mov');
                 ((isset($sidebar) && $sidebar)?$sidebar:$sidebar='event_widget_mov');
                 if ( !function_exists('dynamic_sidebar')|| !dynamic_sidebar($sidebar) ) : ?>
