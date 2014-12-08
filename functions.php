@@ -21,4 +21,15 @@ function event_widget_mov() {
     ) );
 }
 add_action( 'widgets_init', 'event_widget_mov' );
+
+
+
+function sh_the_content_by_id( $post_id=0, $more_link_text = null, $stripteaser = false ){
+    global $post;
+    $post = &get_post($post_id);
+    setup_postdata( $post, $more_link_text, $stripteaser );
+    the_content();
+    wp_reset_postdata( $post );
+}
+
 ?>

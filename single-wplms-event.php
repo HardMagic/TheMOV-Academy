@@ -139,8 +139,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                      else {  
                          
                         $product=get_post_meta(get_the_ID(),'vibe_product',true);
-                        $queried_post = get_post($product);
-                        echo $queried_post->post_content;
+                        sh_the_content_by_id($product);
                         
         
                         }
