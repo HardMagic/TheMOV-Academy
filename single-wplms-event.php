@@ -108,7 +108,7 @@ do_action('wplms_before_single_event');
                         <?php
                         if(apply_filters('wplms_event_access_flag',$access_flag)){
                             the_content(); 
-                        else {  ?> <div>Show Info</div> <?php }
+                       
                         if(vibe_validate($show_location)){
                            $map_zoom=vibe_get_option('map_zoom');
                       echo '<h3 class="heading">'.__('Event Location','vibe').'</h3>';
@@ -136,6 +136,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                         echo '<div id="map-canvas"></div></div>';
                         }
                     }
+                     else {  ?> <div>Show Info</div> <?php }
                         ?>
                          <?php do_action('wplms_event_after_content',get_the_ID()); ?>
                     </div>
