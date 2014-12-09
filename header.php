@@ -122,6 +122,9 @@ wp_head();
                                 the_widget('vibe_bp_login',array(),array());   
                             }
                         ?>
+                        <div style="overflow:hidden;width:37px;height:37px;">
+                        <?php do_action('oa_social_login'); ?>
+                        </div>
                        </div> 
                     </div>
                     <a id="trigger">
