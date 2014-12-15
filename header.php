@@ -91,7 +91,10 @@ wp_head();
                             if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
                                 ?>
                                 <ul class="topmenu">
-                                    <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); bp_loggedin_user_avatar( 'type=full' ); ?><span><?php bp_loggedin_user_fullname(); ?></span></a></li>
+                                   
+                                    <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); 
+                                    if (!is_cart() || !is_checkout() )  { bp_loggedin_user_avatar( 'type=full' ); } ?>
+                                    <span><?php bp_loggedin_user_fullname(); ?></span></a></li>
                                     <?php
                                     if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || (function_exists('is_plugin_active_for_network') && is_plugin_active_for_network( 'woocommerce/woocommerce.php'))) { global $woocommerce;
                                     ?>
