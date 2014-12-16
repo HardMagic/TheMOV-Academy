@@ -15,6 +15,7 @@ if(!isset($layout) || !$layout)
     $layout = '';
 
 wp_head();
+
 $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
 						if(is_ssl()){
 							$protocol = is_ssl() ? 'https' : 'http';
@@ -70,11 +71,8 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
                             }else{
                                 echo '<h2 id="logo">';
                             }
+                        ?>
                         
-                        
-						
-						
-						?>
                             <a href="<?php echo vibe_site_url(); ?>"><img src="<?php  echo $mov_logo; ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
                         <?php
                             if(is_home()){
@@ -99,17 +97,9 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
                             if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
                                 ?>
                                 <ul class="topmenu">
-<<<<<<< HEAD
-                                    
-                                    <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); 
-                                    if (!is_cart() && !is_checkout() )  { 
-									bp_loggedin_user_avatar( 'type=full' );
-									} ?>
-=======
                                    
                                     <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); 
                                     if (!is_cart() && !is_checkout() )  { bp_loggedin_user_avatar( 'type=full' ); } ?>
->>>>>>> 159fbf5002a3b7e082411743c5e9e58debeba723
                                     <span><?php bp_loggedin_user_fullname(); ?></span></a></li>
                                     <?php
                                     if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || (function_exists('is_plugin_active_for_network') && is_plugin_active_for_network( 'woocommerce/woocommerce.php'))) { global $woocommerce;
@@ -143,17 +133,9 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
 								}	  
                             }
                         ?>
-<<<<<<< HEAD
-						<center>
-						<div style="padding:0px 20px; overflow:hidden; background-color: #303942; width:240px;height:77px; text-align: center;">
-						<?php do_action('oa_social_login'); ?>
-						</div>
-						</center>
-=======
                         <div style="overflow:hidden;width:37px;height:37px;">
                         <?php do_action('oa_social_login'); ?>
                         </div>
->>>>>>> 159fbf5002a3b7e082411743c5e9e58debeba723
                        </div> 
                     </div>
                     <a id="trigger">
