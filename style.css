@@ -28,7 +28,7 @@ header + section,
 }
 header + section#content,
 header + section#title{
-	padding-top:40px;
+	padding-top:52px;
 }
 #title{margin-top:0;}
 .topmenu{
