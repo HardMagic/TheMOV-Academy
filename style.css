@@ -20,7 +20,7 @@ header{
 }
 
 header + #content + .stripe{
-	margin-top:-60px;
+	margin-top:-30px;
 }
 header + section,
 #grouptitle, #memberstitle, #activitytitle{
@@ -28,7 +28,7 @@ header + section,
 }
 header + section#content,
 header + section#title{
-	padding-top:60px;
+	padding-top:40px;
 }
 #title{margin-top:0;}
 .topmenu{
