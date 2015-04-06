@@ -15,12 +15,6 @@ if(!isset($layout) || !$layout)
     $layout = '';
 
 wp_head();
-
-$mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
-						if(is_ssl()){
-							$protocol = is_ssl() ? 'https' : 'http';
-							$mov_logo = str_replace('http:','',$mov_logo);
-						}
 ?>
 </head>
 <body <?php body_class($layout); ?>>
@@ -28,7 +22,7 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
     <div class="pagesidebar">
         <div class="sidebarcontent">    
             <h2 id="sidelogo">
-            <a href="<?php echo vibe_site_url(); ?>"><img src="<?php  echo $mov_logo; ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
+            <a href="<?php echo vibe_site_url(); ?>"><img src="<?php  echo apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png'); ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
             </h2>
             <?php
                 $args = apply_filters('wplms-mobile-menu',array(
@@ -73,7 +67,7 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
                             }
                         ?>
                         
-                            <a href="<?php echo vibe_site_url(); ?>"><img src="<?php  echo $mov_logo; ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
+                            <a href="<?php echo vibe_site_url(); ?>"><img src="<?php  echo apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png'); ?>" alt="<?php echo get_bloginfo('name'); ?>" /></a>
                         <?php
                             if(is_home()){
                                 echo '</h1>';
@@ -97,10 +91,7 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
                             if ( function_exists('bp_loggedin_user_link') && is_user_logged_in() ) :
                                 ?>
                                 <ul class="topmenu">
-                                   
-                                    <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); 
-                                    if (!is_cart() && !is_checkout() )  { bp_loggedin_user_avatar( 'type=full' ); } ?>
-                                    <span><?php bp_loggedin_user_fullname(); ?></span></a></li>
+                                    <li><a href="<?php bp_loggedin_user_link(); ?>" class="smallimg vbplogin"><?php $n=vbp_current_user_notification_count(); echo ((isset($n) && $n)?'<em></em>':''); bp_loggedin_user_avatar( 'type=full' ); ?><span><?php bp_loggedin_user_fullname(); ?></span></a></li>
                                     <?php
                                     if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || (function_exists('is_plugin_active_for_network') && is_plugin_active_for_network( 'woocommerce/woocommerce.php'))) { global $woocommerce;
                                     ?>
@@ -128,14 +119,9 @@ $mov_logo = apply_filters('wplms_logo_url',VIBE_URL.'/images/logo.png');
                         <div id="vibe_bp_login">
                         <?php
                             if ( function_exists('bp_get_signup_allowed')){
-                                 if (!is_cart() && !is_checkout() )  { 
-									the_widget('vibe_bp_login',array(),array()); 
-								}	  
+                                the_widget('vibe_bp_login',array(),array());   
                             }
                         ?>
-                        <div style="overflow:hidden;width:37px;height:37px;">
-                        <?php do_action('oa_social_login'); ?>
-                        </div>
                        </div> 
                     </div>
                     <a id="trigger">
