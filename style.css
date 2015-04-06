@@ -24,7 +24,7 @@ header + #content + .stripe{
 }
 header + section,
 #grouptitle, #memberstitle, #activitytitle{
-	padding-top:90px;
+	padding-top:60px;
 }
 header + section#content,
 header + section#title{
